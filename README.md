@@ -1,2 +1,2 @@
 # Image2Emoji
-Turn Image into Emoji pixels
+Turn Image into Emoji pixelatad picture
