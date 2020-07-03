@@ -3,7 +3,7 @@ from PIL import Image
 import numpy as np
 import sys
 
-# Global
+# Global Variable
 
 # Pixels of an icon
 ICON_SIZE = 20
@@ -23,19 +23,17 @@ def img_hist(img):
 def hist_distance(hist1, hist2):
     return np.linalg.norm(hist1 - hist2)
 
+# Code
 
 # open image - emojy
 icons_image = Image.open("C:/Users/15108/Downloads/emoji_sprite.png")
-#"C:\Users\15108\Downloads\all-emoji.png"
+
 # Determine how many icons in the image (height and whidth)
 x_size, y_size = icons_image.size
 x_icons = x_size // ICON_SIZE
 y_icons = y_size // ICON_SIZE
 
-
-
 # Crop the image into icons 
-#icons = [crop_icon(icons_image, row, col) for col in range(x_icons) for row in range(y_icons)]
 icons = []
 for row in range (y_icons):
     for col in range (x_icons):
@@ -45,9 +43,7 @@ for row in range (y_icons):
 icon_hists = list(map(img_hist, icons))
 
 # Open image - original (and convert to RGBA)
-# img_filename = sys.argv[1]
-img = Image.open("C:/Users/15108/Downloads/1195384.jpg").convert('RGBA')
-#img = Image.open("C:/Users/15108/Downloads/emoticon.jpg").convert('RGBA')
+img = Image.open("img_filename").convert('RGBA')
 
 # Get height and whidth of the image
 x_size, y_size = img.size
@@ -69,13 +65,7 @@ for row in range(y_size // ICON_SIZE):
             mask = icon.split()[3])
 
 # save the new image
-#new_img.save(img_filename + '.out.png')
-im1 = new_img.save('C:/Users/15108/Downloads/finally.out.png')
+im1 = new_img.save('img_filename + path .out.png')
+
 # show the new image
 new_img.show()
-
-
-
-
-
-
